@@ -41,7 +41,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.event.push.pusher.login }}
+          username: ${{ github.event.sender.login }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-artifact@v3
