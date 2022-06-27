@@ -4,4 +4,4 @@ RUN apk add curl
 
 COPY . .
 
-RUN echo hello
+RUN echo goodday
