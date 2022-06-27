@@ -27,6 +27,12 @@ jobs:
           outputs: type=docker,dest=/tmp/gha-test-amd64.tar
           cache-from: type=gha
           cache-to: type=gha,mode=max
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
