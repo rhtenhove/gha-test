@@ -78,7 +78,6 @@ jobs:
       image: ghcr.io/${{ github.actor }}/gha-test:amd64
     steps:
       - name: Test amd64
-        working-directory: /gha-test
         run: |
           curl ifconfig.me
 
