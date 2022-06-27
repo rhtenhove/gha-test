@@ -23,7 +23,8 @@ jobs:
         with:
           context: .
           platforms: linux/amd64
-          tags: gha-test:amd64
+          tags: ghcr.io/${{ github.actor }}/gha-test:amd64
+          push: true
           outputs: type=docker,dest=/tmp/gha-test-amd64.tar
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -50,7 +51,7 @@ jobs:
         with:
           context: .
           platforms: linux/arm64
-          tags: gha-test:arm64
+          tags: ghcr.io/${{ github.actor }}/gha-test:arm64
           outputs: type=docker,dest=/tmp/gha-test-amd64.tar
           cache-from: type=gha
           cache-to: type=gha,mode=max
