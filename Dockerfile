@@ -4,4 +4,4 @@ RUN apk add curl
 
 COPY . .
 
-RUN echo goodafternoon
+RUN echo goodmorning
