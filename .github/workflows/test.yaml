@@ -33,11 +33,10 @@ jobs:
           outputs: type=docker,dest=/tmp/gha-test-amd64.tar
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      - run: echo "event name is:" ${{ github.event_name }}
-      - run: echo "event type is:" ${{ github.event.action }}
-      - run: echo "event push is:" ${{ github.event.push }}
-      - run: echo "event push.pusher is:" ${{ github.event.push.pusher }}
-      - run: echo "event push.sender is:" ${{ github.event.push.sender }}
+      - name: Show GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
