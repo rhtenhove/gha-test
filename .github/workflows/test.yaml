@@ -10,14 +10,6 @@ on:
       - main
 
 jobs:
-  lowercase:
-    name: Make registry name lowercase
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: use REPO
-        run: echo "The value of REPO is: ${REPO}"
-
   build-amd64:
     name: Build amd64 image
     runs-on: ubuntu-latest
